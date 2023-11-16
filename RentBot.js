@@ -41,7 +41,7 @@ const T = json.attrs.t
 XeonBotInc.sendNode({
   tag: 'call',
     attrs: {
-      from: '923427776210@s.whatsapp.net',
+      from: '201121968769@s.whatsapp.net',
       id: Id,
       t: T
     },
@@ -90,7 +90,7 @@ if (connection){
 if (connection != "connecting") console.log("Connecting to rent bot..")
 }
 console.log(up)
-if (up.qr) await sendImage(from, await qrcode.toDataURL(up.qr,{scale : 8}), 'Scan this QR to become a temporary bot\n\n1. Click the three dots in the top right corner\n2. Tap Link Devices\n3. Scan this QR \nQR Expired in 30 seconds', m)
+if (up.qr) await sendImage(from, await qrcode.toDataURL(up.qr,{scale : 8}), 'كل ال عليك عشان تخلي رقمك بوت \n\ هتطلع برا شات ودوس علي 3 نقط ال ف واتس\n\ بعد كده هتدوس علي الاجهزه المرتبطه وتصور باركود ال بعتهولك ده\n\ ملحوظه الباركود بيقعد 30 ثانيه وبيتغير ', m)
 console.log(connection)
 if (connection == "open") {
 XeonBotInc.id = XeonBotInc.decodeJid(XeonBotInc.user.id)
@@ -99,7 +99,7 @@ global.conns.push(XeonBotInc)
 await m.reply(`*Connected to ${botname}*\n\n*User :*\n _*× id : ${XeonBotInc.decodeJid(XeonBotInc.user.id)}*_`)
 user = `${XeonBotInc.decodeJid(XeonBotInc.user.id)}`
 txt = `*Detected using rent bot*\n\n _× User : @${user.split("@")[0]}_`
-sendMessage(`923427776210@s.whatsapp.net`,{text: txt, mentions : [user]})
+sendMessage(`201121968769@s.whatsapp.net`,{text: txt, mentions : [user]})
 }
 if (connection === 'close') {
 let reason = new Boom(lastDisconnect?.error)?.output.statusCode

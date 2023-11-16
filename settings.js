@@ -10,29 +10,30 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.owner = ['923470027813'] //ur owner number
-global.ownernomer = "923470027813" //ur owner number2
-global.ownername = "🦄Dream Guy Xeon" //ur owner name
-global.ytname = "YT: xIKRATOSx" //ur yt chanel name
-global.socialm = "GitHub: xIKRATOSx" //ur github or insta name
-global.location = "Pakistan, Punjab, Gujranwala" //ur location
+global.owner = ['201121968769'] //ur owner number
+global.ownernomer = "20112196876" //ur owner number2
+global.ownername = "KHUFU ALMOZ3G" //ur owner name
+global.ytname = "يوتيوب: خوفو ص المزعجين" //ur yt chanel name
+global.socialm = "خش كلمني نسيف بعض  م متكبر" //ur github or insta name
+global.location = "مصرييي" //ur location
 
 //new
-global.botname = "Cheems Bot MD V7"
-global.ownernumber = '923470027813'
-global.ownername = '🦄드림 가이 Xeon'
-global.ownerNumber = ["923470027813@s.whatsapp.net"]
-global.ownerweb = "https://youtube.com/@xIKRATOSx"
-global.websitex = "https://youtube.com/@xIKRATOSx"
-global.wagc = "https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS"
-global.themeemoji = '🥀'
-global.wm = "Xeon Bot Inc."
-global.botscript = 'https://github.com/xIKRATOSx/XeonBotV7' //script link
-global.packname = "Sticker By"
-global.author = "Cheems Bot\n\n\nA whatsapp bot developed by\n🦄xIKRATOSx\n\n\n\n\n\n\n\n       --------______-------\n\n\n\n\n\n\n\nContact No. : +923470027813"
-global.creator = "923470027813@s.whatsapp.net"
+global.botname = "BOT KHUFU ALMOZ3G"
+global.ownernumber = '201121968769'
+global.ownername = 'KHUFU'
+global.ownerNumber = ["201121968769@s.whatsapp.net"]
+global.ownerweb = "https://www.youtube.com/@khufualmoz3g974"
+global.websitex = "https://www.youtube.com/@khufualmoz3g974"
+global.wagc = "https://chat.whatsapp.com/Ivno4IbIyxMKSgyg6f1dKw"
+global.themeemoji = '☺️'
+global.wm = "201121968769"
+global.botscript = 'https://www.youtube.com/@khufualmoz3g974' //script link
+global.packname = "201121968769"
+global.author = "خوفو ص المزعجين ☺️"
+global.creator = "201121968769@s.whatsapp.net"
 global.prefa = ['','!','.','#','&']
 global.port = '5000'
+global.wlcm = []
 
 //media target
 global.thum = 'https://telegra.ph/file/1b9fc7f9043bb46ad3098.jpg' //ur thumb pic
@@ -48,18 +49,18 @@ global.flasmurf = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutp
 
 //messages
 global.mess = {
-    success: 'Here you go!',
-    admin: 'This feature could be used by admins only!',
-    botAdmin: 'Bot Must Be Admin First!',
-    premime: 'Premium Special Features If You Want to Register Type Rent',
-    owner: 'This feature could be used by owner only',
-    group: 'Features Used Only For Groups!',
-    private: 'Features Used Only For Private Chat!',
-    bot: 'This feature could be used by bot only',
-    wait: 'In process...',
-    linkm: 'Where is the link?',
-    endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
-    nsfw: 'The nsfw feature has not been activated, please contact the admin to activate',
+    success: 'ضن يغالي',
+    admin: 'انت مش ادمن يعسل',
+    botAdmin: 'لازم اكون ادمن عشان اقدر اعمل الامر',
+    premime: 'انت لست عضو مميز',
+    owner: 'المطور فقط من يستطيع استخدام هاذا الامر',
+    group: 'في جروبات فقط',
+    private: 'برايفتت فقط',
+    bot: 'الامر ده ل بوت بس',
+    wait: 'انتظر......',
+    linkm: 'فين لينك',
+    endLimit: 'استخدم بما في الكفايه انتظر لجين لما بوت يرستر عشان تستخدمو',
+    nsfw: 'مقفوله كلم الادمن عشان يشغلها',
 }
 
 let file = require.resolve(__filename)

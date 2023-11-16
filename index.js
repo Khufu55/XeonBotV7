@@ -95,40 +95,23 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 			console.log(json)
 			const res = json[0];
 			if (res.announce == true) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
-				});
+				await sleep(2000);
 			} else if (res.announce == false) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nThe group has been opened by admin, Now participants can send messages !`,
-				});
+				await sleep(2000);
 			} else if (res.restrict == true) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
-				});
+				await sleep(2000);
 			} else if (res.restrict == false) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been opened, Now participants can edit group info !`,
-				});
+				await sleep(2000);
 			} else if(!res.desc == ''){
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, { 
-					text: `「 Group Settings Change 」\n\n*Group description has been changed to*\n\n${res.desc}`,
-				});
+				await sleep(2000);
       } else {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
-				});
+				await sleep(2000);
 			} 
 			
 		});
 		
 XeonBotInc.ev.on('group-participants.update', async (anu) => {
+	if (!wlcm.includes(anu.id)) return
 console.log(anu)
 try {
 let metadata = await XeonBotInc.groupMetadata(anu.id)
@@ -145,101 +128,18 @@ ppgroup = await XeonBotInc.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //welcome\\
-memb = metadata.participants.length
-XeonWlcm = await getBuffer(ppuser)
-XeonLft = await getBuffer(ppuser)
-                if (anu.action == 'add') {
-                const xeonbuffer = await getBuffer(ppuser)
-                let xeonName = num
-                const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-	            const xmembers = metadata.participants.length
-                xeonbody = `┌─❖
-│「 𝗛𝗶 👋 」
-└┬❖ 「  @${xeonName.split("@")[0]}  」
-   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
-   │✑  ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${xmembers}th
-   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
-   │✑ ${xtime} ${xdate}
-   └───────────────┈ ⳹`
-XeonBotInc.sendMessage(anu.id,
- { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonWlcm,
-"sourceUrl": `${wagc}`}}})
-                } else if (anu.action == 'remove') {
-                	const xeonbuffer = await getBuffer(ppuser)
-                    const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	                const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                	let xeonName = num
-                    const xeonmembers = metadata.participants.length
-                    xeonbody = `┌─❖
-│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
-└┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  𝗟𝗲𝗳𝘁 
-   │✑ ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${xeonmembers}th
-   │✑  𝗧𝗶𝗺𝗲 : 
-   │✑  ${xeontime} ${xeondate}
-   └───────────────┈ ⳹`
-XeonBotInc.sendMessage(anu.id,
- { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonLft,
-"sourceUrl": `${wagc}`}}})
+if (anu.action == 'add') {
+XeonBotInc.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `نورت ي @${num.split("@")[0]}*
+جروب : ${metadata.subject} 
+وصف : ${metadata.desc}
+المطور : 201121968769`})
+} else if (anu.action == 'remove') {
+XeonBotInc.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `
+خرج *@${num.split("@")[0]}*`})
 } else if (anu.action == 'promote') {
-const xeonbuffer = await getBuffer(ppuser)
-const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-let xeonName = num
-xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, you have been *promoted* to *admin* 🥳`
-   XeonBotInc.sendMessage(anu.id,
- { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonWlcm,
-"sourceUrl": `${wagc}`}}})
+XeonBotInc.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} اترفع ادمن`  })
 } else if (anu.action == 'demote') {
-const xeonbuffer = await getBuffer(ppuser)
-const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-let xeonName = num
-xeonbody = `𝗢𝗼𝗽𝘀‼️ @${xeonName.split("@")[0]}, you have been *demoted* from *admin* 😬`
-XeonBotInc.sendMessage(anu.id,
- { text: xeonbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": XeonLft,
-"sourceUrl": `${wagc}`}}})
+XeonBotInc.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `@${num.split('@')[0]} نزل من الادمن`})
 }
 }
 } catch (err) {
@@ -461,13 +361,13 @@ else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out
 else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); XeonBotIncBot(); }
 else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); XeonBotIncBot(); }
 else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
-} else if (connection === "open") { XeonBotInc.sendMessage("923470027813@s.whatsapp.net", { text: `*Bot started!*\n\n\n_Don't forget to support, bro :)_\n\nYouTube: https://youtube.com/@xIKRATOSx\n\nGitHub: https://github.com/xIKRATOSx\n\nInstsgram: https://instagram.com/unicorn_xeon?igshid=MTIzZWQxMDU=\n\nWhatsApp Pm: wa.me/923470027813\n\n WhatsApp Gc1: https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS\n\nWhatsApp Gc2: https://chat.whatsapp.com/LS1Xx3fSqg7FpSYSjKWhL5\n\nWhatsApp Gc3: https://chat.whatsapp.com/EcycNbJFCVT5ZsG9xIGkqd\n\nDonate: https://i.ibb.co/w46VQ8D/Picsart-22-10-08-06-46-30-674.jpg \n\n\n_*Thanks to*_\n_*Lord Buddha*_\n_*Myself*_\n_*Family*_\n_*Friends who helped me assemble this script*_` }); }
+} else if (connection === "open") { XeonBotInc.sendMessage("201121968769@s.whatsapp.net", { text: `*تم تشغيل البوت*\n\n\nخش اشترك في قناتي بق يغالي\n\nشاتي: wa.me/201121968769` }); }
 console.log('Connected...', update)
 })
 
 XeonBotInc.ev.on('creds.update', await saveCreds)
 
-start('2',colors.bold.white('\nStatus Active, Waiting for New Messages..'))
+start('2',colors.bold.white('\nبوت اشتغل وفي انتظار ارسال رساله'))
 
 XeonBotInc.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
 let buttonMessage = {
